@@ -1,6 +1,8 @@
 # AssignmentInverter
 Invert the two sides of an assignment or a selection of assignments.
 
+![preview](https://github.com/Flash3001/AssignmentInverter/blob/master/preview.png)
+
 <h2>License</h2>
 
    Copyright 2016, Lucas Teixeira
