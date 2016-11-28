@@ -30,9 +30,13 @@ namespace AssignmentInverter
         private static void AnalyzeSymbol(SyntaxNodeAnalysisContext context)
         {
             var assingNode = context.Node as AssignmentExpressionSyntax;
-            var diagnostic = Diagnostic.Create(Rule, assingNode.GetLocation());
+            var right = assingNode.Right;
+            if (right is ElementAccessExpressionSyntax || right is MemberAccessExpressionSyntax || right is IdentifierNameSyntax)
+            {
+                var diagnostic = Diagnostic.Create(Rule, assingNode.GetLocation());
 
-            context.ReportDiagnostic(diagnostic);
+                context.ReportDiagnostic(diagnostic);
+            }
         }
     }
 }
